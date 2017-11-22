@@ -1,0 +1,10 @@
+{
+  "name": "express-zoo-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Jared Hutchinson",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
