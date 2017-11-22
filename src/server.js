@@ -1,7 +1,15 @@
-const express = require('express') 1.1M(gzipped: 378.7K)
+const express = require('express')
 
 const server = express()
 
-server.listen(7000)
-console.log('Started at http://localhost:7000')
+server.get('/', (req, res) => {
+  res.json({ message: 'This is home' })
+})
+
+server.get('/about', (req, res) => {
+  res.json({ message: 'This is about' })
+})
+
+server.listen(7000, () => {
+  console.log('Started at http://localhost:7000')
 })
