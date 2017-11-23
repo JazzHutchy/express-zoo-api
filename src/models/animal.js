@@ -18,10 +18,20 @@ let animals = [
     id: 4,
     name: 'Grey Rhino (they exist now)',
     count: 1
+  },
+  {
+    id: 5,
+    name: 'Elephant',
+    count: 5
+  },
+  {
+    id: 6,
+    name: 'Komodo Dragon',
+    count: 9
   }
 ]
 
-let nextID = 5
+let nextID = 7
 
 // Read
 function all() {
@@ -62,10 +72,55 @@ function create(attributes) {
 }
 
 // Update
+
+// function update(id, attributes) {
+// let foundAnimal = find(id)
+// // Check if animal was not found
+// if (!foundAnimal) {
+//   // If so bail early
+//   return null
+// }
+// let animal = foundAnimal
+// // Warning: attributes may contain 'id' or other unwanted attributes
+// Object.assign(animal, attributes)
+// // Return the updated animal
+// return animal
+// }
+
+function update(id, attributes) {
+  let animal = find(id)
+  // let index = animals.indexOf(foundAnimal)
+  //const updatedAnimal = Object.assign({}, animal, attributes)
+  if (animal) {
+    Object.assign(animal, attributes)
+    return animal
+  }
+  else {
+    return null
+  }
+}
+
 // Destroy
+
+function destroy(id) {
+  // id = parseInt(id, 10)
+  let foundAnimal = find(id)
+
+  let index = animals.indexOf(foundAnimal)
+
+  if (index === -1) {
+    return null
+  }
+
+  animals.splice(index, 1)
+
+  return foundAnimal
+}
 
 module.exports = {
   all,
   find,
-  create
+  create,
+  destroy,
+  update
 }
