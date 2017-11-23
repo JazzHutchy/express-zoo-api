@@ -1,11 +1,9 @@
 const express = require('express')
-// const ticketsRouter = require('./routes/tickets')
-// const animalsRouter = require('./routes/animals')
+const bodyParser = require('body-parser')
 
 const server = express()
 
-// server.use('/', ticketsRouter)
-// server.use('/', animalsRouter)
+server.use(bodyParser.json())
 
 server.use('/', [
   require('./routes/tickets'),

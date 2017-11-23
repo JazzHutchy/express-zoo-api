@@ -12,3 +12,12 @@ GET http://localhost:7000/animals
 
 ###
 GET http://localhost:7000/animals/4
+
+###
+POST http://localhost:7000/animals
+Content-Type: application/json
+
+{
+  "name": "Lion",
+  "count": 94
+}
